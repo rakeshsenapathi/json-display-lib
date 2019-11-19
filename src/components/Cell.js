@@ -1,25 +1,13 @@
 import React from 'react';
 
-const handleSort = (cell) => {
+const Cell = (props) => {
 
-    if (cell.sortable === "true") {
-        console.log(cell.label + "Is sortable");
-    }
-
-    else {
-        console.log("Is not sortable");
-    }
-}
-
-
-const Cell = ({ cell, header }) => {
-
-    const cellMarkUp = header ? (
-        <th onClick={() => handleSort(cell)}>
-            {cell.label}
+    const cellMarkUp = props.header ? (
+        <th onClick={() => props.sortBy(props.cell.id)}>
+            {props.cell.label}
         </th>
     ) : (
-            <td>{cell.value}</td>
+            <td>{props.cell.value}</td>
         );
 
     return (cellMarkUp);

@@ -62,7 +62,7 @@
             "data": [
                 {
                     "id": "firstName",
-                    "value": "Jane"
+                    "value": "Abdul"
                 },
                 {
                     "id": "lastName",
@@ -117,6 +117,14 @@
                 {
                     "id": "lastName",
                     "value": "Doe"
+                },
+                {
+                    "id": "dateOfBirth",
+                    "value": "07-11-1995"
+                },
+                {
+                    "id": "designation",
+                    "value": "Intern"
                 },
                 {
                     "id": "department",
