@@ -16,6 +16,13 @@ export const get_row_data = (rowData) => ({
 
 })
 
+export const get_filtered_row = (rowData) => ({
+
+    type: types.SEARCH,
+    payload: rowData
+
+})
+
 
 export const get_data = () => (dispatch) => {
 
@@ -28,6 +35,10 @@ export const get_data = () => (dispatch) => {
     api.get_rowData(rowData => {
         dispatch(get_row_data(rowData));
     });
+
+    api.get_rowData(rowData => {
+        dispatch(get_filtered_row(rowData));
+    })
 
 }
 

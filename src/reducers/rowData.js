@@ -1,8 +1,8 @@
-import { GET_ROW_DATA, SORT_BY_COLUMN, TEST } from "../constants/actionTypes";
+import { GET_ROW_DATA, SORT_BY_COLUMN, SEARCH } from "../constants/actionTypes";
 
 const initialState = {
     rowData: [],
-    test: 2
+    filteredRows: []
 }
 
 export default function (state = initialState, action) {
@@ -10,6 +10,7 @@ export default function (state = initialState, action) {
     switch (action.type) {
 
         case GET_ROW_DATA:
+            console.log("Called");
             return {
                 ...state,
                 rowData: action.payload
@@ -22,10 +23,10 @@ export default function (state = initialState, action) {
                 rowData: action.payload
             }
 
-        case TEST:
+        case SEARCH:
             return {
                 ...state,
-                test: action.payload
+                filteredRows: action.payload
             }
 
         default:
