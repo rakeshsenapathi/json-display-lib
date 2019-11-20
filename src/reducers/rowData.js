@@ -1,7 +1,8 @@
-import { GET_ROW_DATA, SORT_BY_COLUMN } from "../constants/actionTypes";
+import { GET_ROW_DATA, SORT_BY_COLUMN, TEST } from "../constants/actionTypes";
 
 const initialState = {
-    rowData: []
+    rowData: [],
+    test: 2
 }
 
 export default function (state = initialState, action) {
@@ -19,6 +20,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 rowData: action.payload
+            }
+
+        case TEST:
+            return {
+                ...state,
+                test: action.payload
             }
 
         default:

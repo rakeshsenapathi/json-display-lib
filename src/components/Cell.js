@@ -3,7 +3,7 @@ import React from 'react';
 const Cell = (props) => {
 
     const cellMarkUp = props.header ? (
-        <th onClick={() => props.sortBy(props.cell.id)}>
+        <th onClick={() => props.sortByColumn(props.cell.id, props.cell.sortable)}>
             {props.cell.label}
         </th>
     ) : (

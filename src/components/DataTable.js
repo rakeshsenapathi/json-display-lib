@@ -1,48 +1,15 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 import Cell from './Cell';
-import * as types from '../constants/actionTypes';
 
-const DataTable = () => {
-
-    const columnHeaders = useSelector(state => state.columnHeaders.columnHeaders); // similar to mapStateToProps
-
-    let columnIds = [];
-
-    const dispatch = useDispatch();
-
-    const rowData = useSelector(state => state.rowData.rowData);
-
-    const sortBy = (column) => {
-
-        let id = columnIds.indexOf(column);
-
-        const rowDataCopy = rowData;
-
-        dispatch({
-            type: types.SORT_BY_COLUMN, payload: rowDataCopy.sort((a, b) => {
-                if (a.data[id].value < b.data[id].value) {
-                    return -1;
-                }
-                else if (a.data[id].value > b.data[id].value) {
-                    return 1;
-                }
-                return 0;
-            })
-        })
-        // sortByColumn();
-
-    }
+const DataTable = (props) => {
 
     const renderHeadingRow = (_cell, cellIndex) => {
-
-        columnIds.push(_cell.id);
 
         return (
             <Cell
                 key={`heading-${cellIndex}`}
                 cell={_cell}
-                sortBy={sortBy}
+                sortByColumn={props.sortByColumn}
                 header={true}
             />
         );
@@ -74,11 +41,11 @@ const DataTable = () => {
 
     const populateHeader = (
         <tr>
-            {columnHeaders.map(renderHeadingRow)}
+            {props.columnHeaders.map(renderHeadingRow)}
         </tr>
     );
 
-    const populateBody = (rowData.map(renderRow));
+    const populateBody = (props.rowData.map(renderRow));
 
     return (
 
