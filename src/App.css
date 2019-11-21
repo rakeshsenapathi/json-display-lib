@@ -1,23 +1,80 @@
-.App {
-  text-align: center;
+/* Initial Configuration */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
+body {
+  padding: 40px;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #AD1457, #039BE5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* -------------- */
+
+/* Data Table Container */
+.container--datatable{
+  padding:50px;
+  width: 840px;
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px 10px rgba(0,0,0,.2);
+  margin: 0 auto;
 }
 
-table {
-  border-collapse: collapse;
+.container--datatable__table{
   width: 100%;
 }
+/* ----------- */
 
-th, td {
-  padding: 15px;
+/* Search Bar */
+.container--datatable__search{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.container--datatable__search p{
+  background-color: #e0488b;
+  padding: 8px;
+  color: white;
 }
 
+.input--search{
+  padding: 8px;
+  font-size: 17px;
+  border : 0px solid grey;
+  background: #f1f1f1;
+}
 
+/* ----------- */
+
+/* DATA TABLE */
+.container--datatable__table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.container--datatable__table td, .container--datatable__table th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.container--datatable__table th {
+  padding-top: 12px;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #039BE5;
+  color: white;
+}
+
+/* ----------- */

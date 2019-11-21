@@ -10,17 +10,15 @@ export default function (state = initialState, action) {
     switch (action.type) {
 
         case GET_ROW_DATA:
-            console.log("Called");
             return {
                 ...state,
                 rowData: action.payload
             }
 
         case SORT_BY_COLUMN:
-            console.log(action.payload);
             return {
                 ...state,
-                rowData: action.payload
+                filteredRows: action.payload
             }
 
         case SEARCH:

@@ -1,6 +1,5 @@
 import React from 'react';
 import Cell from './Cell';
-import style from '../App.css';
 
 const DataTable = (props) => {
 
@@ -52,7 +51,7 @@ const DataTable = (props) => {
 
         <div>
 
-            <table style={{ "margin": "0 auto" }} className={{ style }}>
+            <table className="container--datatable__table">
 
                 <thead>{populateHeader}</thead>
                 <tbody>{populateBody}</tbody>
